@@ -68,4 +68,58 @@ The model explains approximately 90.72% of the variation in product demand.
 
 ### 🔮 Demand Prediction
 
-Predict
+Predicts future product demand using the trained Machine Learning model.
+
+### 📦 Inventory Status
+
+Analyzes current stock and classifies inventory as:
+
+- 🔴 Low Stock
+- 🟡 Moderate Stock
+- 🟢 Healthy Stock
+
+### 🔄 Smart Reorder Recommendation
+
+Calculates the recommended reorder quantity based on current stock and predicted demand.
+
+### 📊 Data Visualization
+
+Provides visual analysis to help understand demand and inventory patterns.
+
+### 💻 Interactive Web Application
+
+The trained Machine Learning model is integrated with Streamlit to provide an easy-to-use web interface.
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Joblib
+- Matplotlib
+- Streamlit
+- Jupyter Notebook
+
+## 🔧 Project Improvement & Optimization
+
+The project was improved through:
+
+- Feature engineering
+- Date-based feature extraction
+- Random Forest regression
+- Model evaluation using MAE, RMSE and R²
+- Demand prediction
+- Inventory status analysis
+- Smart reorder recommendations
+- Streamlit integration
+
+## 📂 Project Structure
+
+```text
+Smart-Inventory-Management/
+│
+├── README.md
+├── app.py
+├── Smart Inventory Management Final.ipynb
+└── requirements.txt
