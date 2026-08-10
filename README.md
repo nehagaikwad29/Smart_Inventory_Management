@@ -1,10 +1,14 @@
-# Smart Inventory Management
+# 🤖 Smart Inventory Management
 
 ## 📌 Project Overview
 
 Smart Inventory Management is an Artificial Intelligence and Machine Learning based system designed to predict future product demand and provide intelligent inventory recommendations.
 
-The system uses historical sales data and a Machine Learning model to predict demand. Based on the predicted demand and current stock, it also provides inventory status and smart reorder recommendations.
+The system uses historical sales data and a Machine Learning model to predict product demand. Based on the predicted demand and current stock, it also provides inventory status and smart reorder recommendations.
+
+The project also includes an interactive Streamlit web application that allows users to enter store, product, date, and recent sales information and generate demand predictions.
+
+---
 
 ## 🎯 Objectives
 
@@ -14,10 +18,13 @@ The system uses historical sales data and a Machine Learning model to predict de
 - Calculate recommended reorder quantity.
 - Reduce the risk of stock shortages and overstocking.
 - Provide an interactive and user-friendly web application.
+- Support data-driven inventory management decisions.
+
+---
 
 ## 📊 Dataset
 
-The project uses a demand forecasting dataset containing historical product sales information.
+The project uses a demand forecasting dataset containing historical sales data for stores and products.
 
 ### Key Features
 
@@ -29,10 +36,53 @@ The project uses a demand forecasting dataset containing historical product sale
 - Month
 - Day
 - Day of Week
+- Lag 1
+- Lag 7
 
 ### Target Variable
 
 **Product Sales / Demand**
+
+### Dataset Source
+
+The dataset is a demand forecasting dataset containing historical sales information for different stores and products.
+
+The dataset is used to analyze historical demand patterns and build a Machine Learning model for demand prediction.
+
+---
+
+## 🧹 Data Preprocessing and Feature Engineering
+
+The following preprocessing and feature engineering steps were performed:
+
+- Checked for missing values.
+- Checked for duplicate records.
+- Converted date information into a proper date format.
+- Extracted Year, Month, Day, and Day of Week from the date.
+- Created lag-based features for historical demand.
+- Created **Lag 1**, representing previous day sales.
+- Created **Lag 7**, representing sales from seven days earlier.
+- Prepared the dataset for Machine Learning.
+- Used a time-based train-test split to maintain the chronological order of the data.
+
+---
+
+## 🔍 Exploratory Data Analysis
+
+Exploratory Data Analysis was performed to understand the sales and demand patterns in the dataset.
+
+The analysis includes:
+
+- Dataset structure and summary statistics.
+- Missing-value analysis.
+- Duplicate-value analysis.
+- Sales and demand patterns.
+- Feature relationships.
+- Model feature importance.
+- Actual vs predicted demand visualization.
+- Prediction error analysis.
+
+---
 
 ## 🤖 Machine Learning Algorithm
 
@@ -42,84 +92,16 @@ Random Forest Regressor was selected as the main Machine Learning algorithm beca
 
 Random Forest can capture complex and nonlinear relationships between different features and product demand.
 
-## 📈 Model Performance
+### Model Input Features
 
-The final Random Forest model achieved the following results:
-
-| Evaluation Metric | Result |
-|---|---:|
-| MAE | 7.40 |
-| RMSE | 9.61 |
-| R² Score | 0.9072 |
-| R² Performance | 90.72% |
-
-### Result Interpretation
-
-**MAE – 7.40:**  
-The model's predictions differ from the actual demand by approximately 7.40 units on average.
-
-**RMSE – 9.61:**  
-RMSE measures prediction error while giving greater importance to larger errors.
-
-**R² Score – 0.9072:**  
-The model explains approximately 90.72% of the variation in product demand.
-
-## ⭐ Key Features
-
-### 🔮 Demand Prediction
-
-Predicts future product demand using the trained Machine Learning model.
-
-### 📦 Inventory Status
-
-Analyzes current stock and classifies inventory as:
-
-- 🔴 Low Stock
-- 🟡 Moderate Stock
-- 🟢 Healthy Stock
-
-### 🔄 Smart Reorder Recommendation
-
-Calculates the recommended reorder quantity based on current stock and predicted demand.
-
-### 📊 Data Visualization
-
-Provides visual analysis to help understand demand and inventory patterns.
-
-### 💻 Interactive Web Application
-
-The trained Machine Learning model is integrated with Streamlit to provide an easy-to-use web interface.
-
-## 🛠️ Technologies Used
-
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Joblib
-- Matplotlib
-- Streamlit
-- Jupyter Notebook
-
-## 🔧 Project Improvement & Optimization
-
-The project was improved through:
-
-- Feature engineering
-- Date-based feature extraction
-- Random Forest regression
-- Model evaluation using MAE, RMSE and R²
-- Demand prediction
-- Inventory status analysis
-- Smart reorder recommendations
-- Streamlit integration
-
-## 📂 Project Structure
+The final Random Forest model uses the following eight features:
 
 ```text
-Smart-Inventory-Management/
-│
-├── README.md
-├── app.py
-├── Smart Inventory Management Final.ipynb
-└── requirements.txt
+store
+item
+year
+month
+day
+day_of_week
+lag_1
+lag_7
